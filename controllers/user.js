@@ -37,11 +37,9 @@ export const signup = async (req, res) => {
         .json({ message: "User already exist with this email" });
     }
     if (password !== confirmPassword) {
-      return res
-        .status(400)
-        .json({
-          message: "The password and confirmation password do not match",
-        });
+      return res.status(400).json({
+        message: "The password and confirmation password do not match",
+      });
     }
     const hashedPassword = await bcrypt.hash(password, 12);
     const result = await User.create({
