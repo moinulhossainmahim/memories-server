@@ -10,6 +10,12 @@ import userRoutes from "./routes/users.js";
 const app = express();
 dotenv.config();
 
+const corsOptions = {
+  origin: 'https://memories-client-react.netlify.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Content-Type,Authorization',
+};
+
 app.use(cors());
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
