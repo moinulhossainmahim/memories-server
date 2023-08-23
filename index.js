@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
   res.send("Hello to memories API");
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5005;
 mongoose
   .connect(process.env.CONNECTION_URL)
   .then(
